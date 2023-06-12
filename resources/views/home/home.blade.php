@@ -225,7 +225,7 @@
     <!-- End Products  -->
 
     <!-- Start Blog  -->
-    <div class="latest-blog">
+    {{-- <div class="latest-blog">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -292,7 +292,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- End Blog  -->
 
 

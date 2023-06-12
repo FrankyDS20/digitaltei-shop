@@ -258,7 +258,7 @@
                                     <div class="collapse show" id="sub-men1{{$categoria->category->id}}" data-parent="#list-group-men">
                                         <div class="list-group">
                                             @foreach($categoria->subcategories as $subcategory)
-                                            <a href="#" class="list-group-item list-group-item-action">{{ $subcategory->name}} <small class="text-muted"></small></a>
+                                            <a href="{{route('product.show',$subcategory->id)}}" class="list-group-item list-group-item-action">{{ $subcategory->name}} <small class="text-muted"></small></a>
                                             @endforeach
                                         </div>
                                     </div>

@@ -11,6 +11,6 @@ class ContactController extends Controller
     {
         $titulo = "Contactanos";
         // $empresa = "DIGITALTEI";
-        return view('contactanos.index',compact('titulo'));
+        return view('contact.contact-us',compact('titulo'));
     }
 }

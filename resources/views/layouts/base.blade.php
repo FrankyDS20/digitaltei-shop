@@ -15,6 +15,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
     <!-- Site Icons -->
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
@@ -30,6 +31,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}"/>
+
 
 
 
@@ -53,7 +55,8 @@
                     </div>
                     <div class="our-link">
                         <ul>
-                            <li><a href="#"><i class="fa fa-user s_color"></i> Mi cuenta</a></li>
+                            <li><a data-bs-toggle="modal" data-bs-target="#staticBackdrop" ><i class="fa fa-user s_color"></i> Mi cuenta</a></li>
+                            
                             <li><a href="#"><i class="fas fa-location-arrow"></i> Contactanos</a></li>
                             <li><a href="#"><i class="fas fa-headset"></i> Contactanos</a></li>
                         </ul>
@@ -61,11 +64,9 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 					<div class="login-box">
-						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-							<option>Register Here</option>
-							<option>Sign In</option>
-						</select>
-					</div>
+                        
+                          
+                    </div>
                     <div class="text-slid-box">
                         <div id="offer-box" class="carouselTicker">
                             <ul class="offer-box">
@@ -88,6 +89,126 @@
         </div>
     </div>
     <!-- End Main Top -->
+    {{-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              {{-- <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <label>
+                    <i class="fas fa-user"></i>
+                    Username
+                </label>
+                <div>
+                    <input type="text" placeholder="Username" required/>
+                </div>
+
+                <label>
+                    <i class="fas fa-key"></i>
+                    Password
+                </label>
+                <div>
+                    <input type="password" placeholder="Password" required />
+                </div>
+
+                <div>
+                    <button class="btn btn-dark" type="submit">
+                        <i class="fas fa-lock"></i>
+                        Login
+                    </button>
+                </div>
+
+                <div class="foot">
+                    <a href="#" class="new-acc">
+                        I don't have an account!!!
+                    </a>
+                </div>
+            </form>
+        </div> --}}
+                  {{-- <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                  <p class="text-white-50 mb-5">Please enter your login and password!</p>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-outline form-white mb-4">
+                    <input type="email" id="typeEmailX" class="form-control form-control-lg" />
+                    <label class="form-label" for="typeEmailX">Email</label>
+                  </div>
+                  <div class="form-outline form-white mb-4">
+                    <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+                    <label class="form-label" for="typePasswordX">Password</label>
+                  </div>
+                  <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
+                  <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+                  <div class="d-flex justify-content-center text-center mt-4 pt-1">
+                    <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+                    <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <div>
+                    <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a></p>
+                  </div>
+                </div>
+              </div>
+        </div>
+        </div><br>
+    </div>
+     --}} 
+<!-- Modal de Login -->
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"  data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="grid">
+                
+                <form id="loginForm" class="form login">
+                    @csrf
+                <header class="login__header">
+                    <h3 class="login__title" style="font-weight:bold; color: white;">Login</h3>
+                </header>
+                <div class="login__body">
+                    <div class="alert alert-success d-none" role="alert" id="success">
+                      </div>
+                    <div class="alert alert-danger d-none" id="error" role="alert">
+                       
+                      </div>
+                  <div class="form__field mb-4">
+                    <input type="email" name="email" id="email" placeholder="Email" required value="rfreyrebrayaned@gmail.com">
+                 
+                  </div>
+                  <div class="form__field mb-3">
+                    <input type="password" name="password" id="password" placeholder="Password" required value="123">
+                  
+                  </div>
+
+                  {{-- <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="rememberPassword">
+                    <label class="form-check-label" for="rememberPassword">
+                      Recordar contraseña
+                    </label>
+                  </div> --}}
+                </div>
+                <footer class="login__footer">
+                    <button type="button" class="enviar btn-success">Iniciar sesion </button>
+                 
+                  <p><span class="icon icon--info">?</span><a href="#">Olvido su contraseña</a></p>
+                </footer>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
 
     <!-- Start Main Top -->
     <header class="main-header">
@@ -175,9 +296,7 @@
     </header>
     <!-- End Main Top -->
     @yield('content')
-
-
-
+      
     <!-- Start Footer  -->
     <footer>
         <div class="footer-main">
@@ -203,47 +322,9 @@
 							</form>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-top-box">
-							<h3>Social Media</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							<ul>
-                                <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
-                            </ul>
-						</div>
-					</div>
-				</div>
-				<hr>
-                <div class="row">
-                    <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="footer-widget">
-                            <h4>About Freshshop</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p> 							
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="footer-link">
-                            <h4>Information</h4>
-                            <ul>
-                                <li><a href="#">Nosotros</a></li>
-                                <li><a href="#">Customer Service</a></li>
-                                <li><a href="#">Our Sitemap</a></li>
-                                <li><a href="#">Terms &amp; Conditions</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Delivery Information</a></li>
-                            </ul>
-                        </div>
-                    </div>
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-link-contact">
-                            <h4>Contactanos</h4>
+                            <h4>Ubicacion</h4>
                             <ul>
                                 <li>
                                     <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
@@ -257,7 +338,46 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+					{{-- <div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="footer-top-box">
+							<h3>Social Media</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							<ul>
+                                <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                            </ul>
+						</div>
+					</div> --}}
+				</div>
+				<hr>
+                {{-- <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-widget">
+                            <h4>About Freshshop</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p> 							
+                        </div>
+                    </div> 
+                     <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link">
+                            <h4>Information</h4>
+                            <ul>
+                                <li><a href="#">Nosotros</a></li>
+                                <li><a href="#">Customer Service</a></li>
+                                <li><a href="#">Our Sitemap</a></li>
+                                <li><a href="#">Terms &amp; Conditions</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Delivery Information</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div> --}}
             </div>
         </div>
     </footer>
@@ -273,6 +393,10 @@
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
     <!-- ALL JS FILES -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+</html>
     <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
     <script src="{{asset('js/popper.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
@@ -287,6 +411,65 @@
     <script src="{{asset('js/form-validator.min.js')}}"></script>
     <script src="{{asset('js/contact-form-script.js')}}"></script>
     <script src="{{asset('js/custom.js')}}"></script>
+
+    <script>
+        $(document).on('click', '.enviar', function() {
+            $.ajax({
+			url: "https://digitalteiperu.com/api/login",
+            
+			data: new FormData(document.getElementById("loginForm")),
+			method: "post",
+			type: "json",
+			enctype: "multipart/form-data", //usar siempre y cuando se usa con files
+			contentType: false,
+			cache: false,
+			processData: false, //---
+			success: function(response) {
+                $('#error').text(response[0].message);
+                 $('#success').text(response[0].message);
+               if (response[0].codigo!=200) {
+                $("#error").removeClass("d-none")
+                $("#success").addClass("d-none")
+                if (response[0].codigo==405){
+                    redireccionar(response[0].user,response[0].employee)
+                }
+               }  else  if (response[0].codigo==200){
+                    $("#error").addClass("d-none") 
+                    $("#success").removeClass("d-none") 
+            
+               }
+             },
+              error: function() {
+              
+              }
+            });
+        });
+
+        function redireccionar(user, employee) {
+  // Objeto que contiene los datos a enviar
+  var data = {
+    user: user,
+    employee: employee,
+    _token: '{{ csrf_token() }}'
+  };
+
+  // Realizar la solicitud AJAX
+  $.ajax({
+    url: "{{route('register.exception')}} ", // Ruta a la que se enviará la solicitud
+    method: 'POST', // Método HTTP utilizado
+    data: data, // Datos a enviar
+    success: function(response) {
+      // Lógica a realizar en caso de éxito
+      console.log(response);
+    },
+    error: function(xhr, status, error) {
+      // Lógica a realizar en caso de error
+      console.error(error);
+    }
+  });
+}
+
+    </script>
 </body>
 
 </html>

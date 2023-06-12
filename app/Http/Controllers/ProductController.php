@@ -46,6 +46,33 @@ class ProductController extends Controller
        return $data;
 
     }
+    public function show($id){
+        $titulo = "Productos";
+        $apiUrl = "https://digitalteiperu.com/api/products/subcategory/".$id;
+        $jsonData = file_get_contents($apiUrl);
+        $data = json_decode($jsonData);
+    
+        // Configurar la paginación
+        $page = request()->get('page', 1); // Obtener el número de página actual de la solicitud
+        $perPage = 9; // Número de elementos por página
+        $offset = ($page - 1) * $perPage; // Calcular el desplazamiento
+        $items = array_slice($data, $offset, $perPage, true); // Obtener los elementos para la página actual
+    
+        // Crear una instancia de LengthAwarePaginator
+        $paginator = new LengthAwarePaginator(
+            $items,
+            count($data),
+            $perPage,
+            $page,
+            [
+                'path' => Paginator::resolveCurrentPath(), // Obtener la URL base para los enlaces de paginación
+                'query' => request()->query() // Mantener los parámetros de consulta existentes en los enlaces de paginación
+            ]
+        );
+        $categorias=$this->getCategorias();
+        return view('product.index', compact('titulo', 'paginator','categorias'));
+
+    }
 
     public function productbycategory($id)
     {
