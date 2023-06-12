@@ -248,29 +248,28 @@
                                 <h3>Categories</h3>
                             </div>
                             <div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men" data-children=".sub-men">
-                                 @foreach($categorias as $categoria)
-                                <div class="list-group-collapse sub-men">
-                                    <a class="list-group-item " href="#sub-men1{{$categoria->category->id}}" 
-                                        data-toggle="collapse"  aria-controls="sub-men1{{$categoria->category->id}}">
-                                        {{$categoria->category->name }} 
-                                        <small class="text-muted"></small>
-								</a>
-                                    <div class="collapse show" id="sub-men1{{$categoria->category->id}}" data-parent="#list-group-men">
-                                        <div class="list-group">
-                                            @foreach($categoria->subcategories as $subcategory)
-                                            <a href="{{route('product.show',$subcategory->id)}}" class="list-group-item list-group-item-action">{{ $subcategory->name}} <small class="text-muted"></small></a>
-                                            @endforeach
+                                @foreach($categorias as $categoria)
+                                <p>
+                                  <a class="list-group-item list-group-item-action collapsed" data-bs-toggle="collapse" href="#multiCollapseExample{{$categoria->category->id}}"
+                                   role="button" aria-expanded="false" aria-controls="multiCollapseExample{{$categoria->category->id}}">{{$categoria->category->name}}</a>
+                                </p>
+                                  <div class="row">
+                                    <div class="col">
+                                      <div class="collapse multi-collapse" id="multiCollapseExample{{$categoria->category->id}}">
+                                        <div class="card card-body">
+                                          @foreach($categoria->subcategories as $subcategory)
+                                          <a href="{{route('product.show', $subcategory->id)}}" class="list-group-item list-group-item-action">{{ $subcategory->name}} <small class="text-muted"></small></a>
+                                          @endforeach
                                         </div>
+                                      </div>
                                     </div>
-                                </div>
+                                    
+                                  </div>
                                 @endforeach
-                                
-                                
-                               
-                                <a href="#" class="list-group-item list-group-item-action"> Grocery  <small class="text-muted">(150) </small></a>
-                                <a href="#" class="list-group-item list-group-item-action"> Grocery <small class="text-muted">(11)</small></a>
-                                <a href="#" class="list-group-item list-group-item-action"> Grocery <small class="text-muted">(22)</small></a>
+                                <a href="#" class="list-group-item list-group-item-action"> Grocery  <small class="text-muted">(150)</small></a>
                             </div>
+                           
+                            
                         </div>
                         <div class="filter-price-left">
                             <div class="title-left">
@@ -292,90 +291,7 @@
     <!-- End Shop Page -->
 
     <!-- Start Instagram Feed  -->
-    <div class="instagram-box">
-        <div class="main-instagram owl-carousel owl-theme">
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="{{asset('images/instagram-img-01.jpg') }}" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="{{asset('images/instagram-img-02.jpg') }}" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="{{asset('images/instagram-img-03.jpg') }}" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="{{asset('images/instagram-img-04.jpg') }}" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="{{asset('images/instagram-img-05.jpg') }}" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="{{asset('images/instagram-img-06.jpg') }}" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="{{asset('images/instagram-img-07.jpg') }}" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="{{asset('images/instagram-img-08.jpg') }}" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="{{asset('images/instagram-img-09.jpg') }}" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="{{asset('images/instagram-img-05.jpg') }}" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <!-- End Instagram Feed  -->
 
     @endsection

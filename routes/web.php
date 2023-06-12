@@ -16,6 +16,7 @@ Route::resource('contactanos',ContactController::class)->parameters(['contactano
 Route::resource('nosotros',AboutController::class)->parameters(['nosotros'=>'about'])->names('about');
 Route::resource('sesion',LoginController::class)->parameters(['sesion'=>'login'])->names('login');
 Route::resource('servicios',ServicController::class)->parameters(['servicios'=>'servic'])->names('servic');
+Route::resource('registros',RegisterController::class)->parameters(['registros'=>'register'])->names('register');
 // Route::resource('registros',RegisterController::class)->parameters(['registros'=>'register'])->names('register');
 Route::post('registros-exception',[RegisterController::class, 'exception'])->name('register.exception');
 

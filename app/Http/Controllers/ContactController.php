@@ -10,7 +10,13 @@ class ContactController extends Controller
     public function index()
     {
         $titulo = "Contactanos";
-        // $empresa = "DIGITALTEI";
-        return view('contact.contact-us',compact('titulo'));
+         $marcas=$this->getMarcas();
+        return view('contact.contact-us',compact('titulo','marcas'));
+    }
+    public function getMarcas()
+    {
+        $apiUrl = "https://digitalteiperu.com/api/marcas";
+        $jsonData = file_get_contents($apiUrl);
+        return json_decode($jsonData);
     }
 }

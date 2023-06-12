@@ -15,7 +15,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
     <!-- Site Icons -->
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
@@ -43,19 +42,11 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="custom-select-box">
-                        <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-							<option>PEN</option>
-							<option>USD</option>
-							
-						</select>
-                    </div>
-                    <div class="right-phone-box">
-                        <p>Call US :- <a href="#"> +11 900 800 100</a></p>
-                    </div>
+					
+                    
                     <div class="our-link">
                         <ul>
-                            <li><a data-bs-toggle="modal" data-bs-target="#staticBackdrop" ><i class="fa fa-user s_color"></i> Mi cuenta</a></li>
+                            <li><a  href="#" class="text-white"data-bs-toggle="modal" data-bs-target="#staticBackdrop" ><i class="fa fa-user s_color"></i> Mi cuenta</a></li>
                             
                             <li><a href="#"><i class="fas fa-location-arrow"></i> Contactanos</a></li>
                             <li><a href="#"><i class="fas fa-headset"></i> Contactanos</a></li>
@@ -89,78 +80,7 @@
         </div>
     </div>
     <!-- End Main Top -->
-    {{-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              {{-- <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            <form>
-                <label>
-                    <i class="fas fa-user"></i>
-                    Username
-                </label>
-                <div>
-                    <input type="text" placeholder="Username" required/>
-                </div>
-
-                <label>
-                    <i class="fas fa-key"></i>
-                    Password
-                </label>
-                <div>
-                    <input type="password" placeholder="Password" required />
-                </div>
-
-                <div>
-                    <button class="btn btn-dark" type="submit">
-                        <i class="fas fa-lock"></i>
-                        Login
-                    </button>
-                </div>
-
-                <div class="foot">
-                    <a href="#" class="new-acc">
-                        I don't have an account!!!
-                    </a>
-                </div>
-            </form>
-        </div> --}}
-                  {{-- <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-                  <p class="text-white-50 mb-5">Please enter your login and password!</p>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <div class="form-outline form-white mb-4">
-                    <input type="email" id="typeEmailX" class="form-control form-control-lg" />
-                    <label class="form-label" for="typeEmailX">Email</label>
-                  </div>
-                  <div class="form-outline form-white mb-4">
-                    <input type="password" id="typePasswordX" class="form-control form-control-lg" />
-                    <label class="form-label" for="typePasswordX">Password</label>
-                  </div>
-                  <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
-                  <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
-                  <div class="d-flex justify-content-center text-center mt-4 pt-1">
-                    <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
-                    <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
-                    <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <div>
-                    <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a></p>
-                  </div>
-                </div>
-              </div>
-        </div>
-        </div><br>
-    </div>
-     --}} 
+  
 <!-- Modal de Login -->
 
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"  data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -189,16 +109,11 @@
                   
                   </div>
 
-                  {{-- <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="rememberPassword">
-                    <label class="form-check-label" for="rememberPassword">
-                      Recordar contraseña
-                    </label>
-                  </div> --}}
+           
                 </div>
                 <footer class="login__footer">
                     <button type="button" class="enviar btn-success">Iniciar sesion </button>
-                 
+                    <a class="nav-item" href="{{ route('register.index')}}"">registrar </a>
                   <p><span class="icon icon--info">?</span><a href="#">Olvido su contraseña</a></p>
                 </footer>
               </form>
@@ -211,16 +126,16 @@
 
 
     <!-- Start Main Top -->
-    <header class="main-header">
+    <header class="main-top ">
         <!-- Start Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default " style="overflow: hidden;">
             <div class="container">
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="{{ route('home')}}"><img src="{{ asset('images/logo.png')}}" height="140"   class="logo" alt=""></a>
+                    <a class="navbar-brand" href="{{ route('home')}}"><img src="{{ asset('images/logo.png')}}" height="120"   class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
                 
@@ -229,16 +144,15 @@
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item active"><a class="nav-link" href="{{ route('home')}}">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('about.index')}}">Nosotros</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tienda</a>
-                            <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link" href="{{ route('product.index')}}" >Tienda</a>
+                            {{-- <ul class="dropdown-menu">
 								<li><a href="{{ route('product.index')}}">Productos</a></li>
 								<li><a href="{{ route('product.index')}}">Productos Detalle</a></li>
                                 <li><a href="{{ route('product.index')}}">Carrito de Compras</a></li>
                                 <li><a href="{{ route('product.index')}}">Checkout</a></li>
                                 <li><a href="{{ route('product.index')}}">Mi cuenta</a></li>
                                 <li><a href="{{ route('product.index')}}">Wishlist</a></li>
-                            </ul>
+                            </ul> --}}
                         </li>
                         
                         
@@ -298,6 +212,22 @@
     @yield('content')
       
     <!-- Start Footer  -->
+    @if(isset($marcas))
+    <div class="instagram-box">
+        <div class="main-instagram owl-carousel owl-theme">
+            @foreach ($marcas as $marca)
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="https://digitalteiperu.com/storage/{{($marca->image)}}" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+    @endif
     <footer>
         <div class="footer-main">
             <div class="container">
@@ -395,7 +325,9 @@
     <!-- ALL JS FILES -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.5.0/js/bootstrap.bundle.min.js"></script>
+    
 </html>
     <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
     <script src="{{asset('js/popper.min.js')}}"></script>
@@ -470,6 +402,8 @@
 }
 
     </script>
+
+      
 </body>
 
 </html>

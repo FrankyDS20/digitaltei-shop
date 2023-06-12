@@ -10,7 +10,13 @@ class LoginController extends Controller
     public function index()
     {
         $titulo = "login";
-        // $empresa = "DIGITALTEI";
-        return view('home',compact('titulo'));
+         $marcas=$this->getMarcas();
+        return view('home',compact('titulo','marcas'));
+    }
+    public function getMarcas()
+    {
+        $apiUrl = "https://digitalteiperu.com/api/marcas";
+        $jsonData = file_get_contents($apiUrl);
+        return json_decode($jsonData);
     }
 }

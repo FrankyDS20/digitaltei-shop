@@ -35,7 +35,16 @@ class ProductController extends Controller
             ]
         );
         $categorias=$this->getCategorias();
-        return view('product.index', compact('titulo', 'paginator','categorias'));
+        $marcas=$this->getMarcas();
+        
+        return view('product.index', compact('titulo', 'paginator','categorias','marcas'));
+    }
+    public function getMarcas()
+    {
+        $apiUrl = "https://digitalteiperu.com/api/marcas";
+        $jsonData = file_get_contents($apiUrl);
+        return json_decode($jsonData);
+    
     }
     public function getCategorias(){
         $titulo = "Categorías";
@@ -69,8 +78,9 @@ class ProductController extends Controller
                 'query' => request()->query() // Mantener los parámetros de consulta existentes en los enlaces de paginación
             ]
         );
+        $marcas=$this->getMarcas();
         $categorias=$this->getCategorias();
-        return view('product.index', compact('titulo', 'paginator','categorias'));
+        return view('product.index', compact('titulo', 'paginator','categorias','marcas'));
 
     }
 
@@ -91,7 +101,7 @@ class ProductController extends Controller
         // ->paginate(6);
 
         // $titulo = "Productos";
-        // $empresa = "DIGITALTEI";
+         $marcas=$this->getMarcas();
         return view('shop',compact('titulo','data'));
     }
   
